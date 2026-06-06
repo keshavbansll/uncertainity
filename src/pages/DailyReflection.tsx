@@ -36,9 +36,16 @@ export const DailyReflection: React.FC = () => {
   const question = QUESTIONS[currentIdx];
 
   return (
-    <div className="reflection-container">
+    <main className="reflection-container" aria-label="Daily reflection questionnaire">
       <div className="reflection-card card">
-        <div className="progress-bar">
+        <div 
+          className="progress-bar" 
+          role="progressbar" 
+          aria-valuenow={Math.round((currentIdx / QUESTIONS.length) * 100)} 
+          aria-valuemin={0} 
+          aria-valuemax={100}
+          aria-label="Reflection Progress"
+        >
           <div 
             className="progress-fill" 
             style={{ width: `${((currentIdx) / QUESTIONS.length) * 100}%` }} 
@@ -53,18 +60,21 @@ export const DailyReflection: React.FC = () => {
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.15 }}
             className="question-block"
+            role="group"
+            aria-labelledby={`question-${currentIdx}`}
+            aria-live="polite"
           >
-            <h2 className="question-title">{question.title}</h2>
+            <h2 id={`question-${currentIdx}`} className="question-title">{question.title}</h2>
             <p className="question-desc">{question.desc}</p>
             
             <div className="options-grid">
-              <button className="btn-option" onClick={() => handleAnswer(0)}>0 (Low)</button>
-              <button className="btn-option" onClick={() => handleAnswer(0.5)}>0.5 (Mid)</button>
-              <button className="btn-option" onClick={() => handleAnswer(1)}>1.0 (High)</button>
+              <button className="btn-option" onClick={() => handleAnswer(0)} aria-label="Score: 0 - Low">0 (Low)</button>
+              <button className="btn-option" onClick={() => handleAnswer(0.5)} aria-label="Score: 0.5 - Mid">0.5 (Mid)</button>
+              <button className="btn-option" onClick={() => handleAnswer(1)} aria-label="Score: 1.0 - High">1.0 (High)</button>
             </div>
           </motion.div>
         </AnimatePresence>
       </div>
-    </div>
+    </main>
   );
 };

@@ -36,15 +36,16 @@ export const LandingPage: React.FC = () => {
           NEVER LET YOUR LIFE DRIFT APART...
         </motion.p>
 
-        <div className="landing-bottom">
+          <div className="landing-bottom">
           <div className="bottom-left">
             <h2 className="tracker-title">India's 1st Wellness Tracker</h2>
             <button 
               className="brutalist-btn" 
               onClick={() => navigate('/dashboard')}
+              aria-label="Enter Dashboard"
             >
               Enter Dashboard
-              <div className="scratch-lines">
+              <div className="scratch-lines" aria-hidden="true">
                 <div></div>
                 <div></div>
                 <div></div>
@@ -52,14 +53,14 @@ export const LandingPage: React.FC = () => {
             </button>
           </div>
 
-          <div className="carousel-section">
-            <button className="carousel-arrow">&lt;</button>
-            <div className="cards-stack">
+          <div className="carousel-section" role="region" aria-label="Feature showcase carousel">
+            <button className="carousel-arrow" aria-label="Previous feature slide">&lt;</button>
+            <div className="cards-stack" aria-hidden="true">
               <div className="card-item card-1"></div>
               <div className="card-item card-main"></div>
               <div className="card-item card-2"></div>
             </div>
-            <button className="carousel-arrow">&gt;</button>
+            <button className="carousel-arrow" aria-label="Next feature slide">&gt;</button>
           </div>
         </div>
 
