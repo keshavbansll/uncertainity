@@ -1,0 +1,195 @@
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--surface-color);
+  padding: var(--spacing-6) var(--spacing-10);
+  font-family: var(--font-body);
+}
+
+.landing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 8vh;
+}
+
+.author-pill {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  background-color: var(--text-primary);
+  color: var(--surface-color);
+  padding: var(--spacing-2) var(--spacing-6);
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.code-icon {
+  font-family: monospace;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.hashtag-list {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  letter-spacing: 0.5px;
+}
+
+.landing-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  flex: 1;
+}
+
+.hero-title {
+  font-size: 10rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  margin-bottom: var(--spacing-4);
+  text-transform: none;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-16);
+  padding-left: 0.5rem;
+}
+
+.landing-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: auto;
+  padding-bottom: var(--spacing-10);
+}
+
+.bottom-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.tracker-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.brutalist-btn {
+  background-color: #E5E7EB; /* Light gray */
+  color: var(--text-primary);
+  border: 3px solid var(--text-primary);
+  border-radius: var(--radius-full);
+  padding: var(--spacing-4) var(--spacing-8);
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: var(--font-body);
+  cursor: pointer;
+  position: relative;
+  transition: transform 150ms ease;
+  box-shadow: 6px 6px 0px 0px var(--text-primary); /* Brutalist offset shadow */
+  width: fit-content;
+  overflow: hidden;
+}
+
+.brutalist-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 3px 3px 0px 0px var(--text-primary);
+}
+
+/* Small scratch lines inside button */
+.scratch-lines {
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+  display: flex;
+  gap: 3px;
+  transform: rotate(-15deg);
+}
+
+.scratch-lines div {
+  width: 2px;
+  height: 15px;
+  background-color: var(--text-primary);
+}
+
+.carousel-section {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.carousel-arrow {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+.cards-stack {
+  display: flex;
+  position: relative;
+  width: 300px;
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-item {
+  position: absolute;
+  background-color: #F8F9FA; /* Slightly off-white */
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.card-1 {
+  width: 140px;
+  height: 180px;
+  left: 20px;
+  z-index: 1;
+}
+
+.card-2 {
+  width: 150px;
+  height: 190px;
+  left: 120px;
+  z-index: 1;
+}
+
+.card-main {
+  width: 160px;
+  height: 200px;
+  left: 70px;
+  z-index: 2;
+  background-color: #F0F2F5;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 6rem;
+  }
+  .landing-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-10);
+  }
+}
