@@ -34,6 +34,7 @@ export const DailyReflection: React.FC = () => {
   };
 
   const question = QUESTIONS[currentIdx];
+  if (!question) return null;
 
   return (
     <main className="reflection-container" aria-label="Daily reflection questionnaire">
